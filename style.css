@@ -12,7 +12,7 @@ body {
 }
 .myspace {
 	display: inline-block;
-	width: 29%;
+	width: 100%;
 	margin: 0px;
 }
 .feed {
@@ -37,13 +37,15 @@ body {
 	color: white;
 }
 h1 {
+	display: inline-block;
 	font-family: "Rajdhani";
 	font-size: 3em;
 	vertical-align: middle;
 }
-img {	
+img {
+	display: inline-block;	
 	vertical-align: middle;
-	width: 300px;
+	width: 100px;
     border-style: solid;
     border-width: 10px;
     border-color: white;
