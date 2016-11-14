@@ -4,7 +4,8 @@ body {
 }
 .fullpage {
 	margin: 0px;
-	background-color: #ecf0f1;
+	background-image: url("http://img03.deviantart.net/f42b/i/2012/144/6/d/white_texture_by_yourpoisontheo-d50x92f.jpg");
+	background-size: cover;
 	display: inline-block;
 	height: 100vh;
 	width: 100%;
