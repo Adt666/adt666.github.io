@@ -9,61 +9,42 @@
 	<div class="fullpage">
 		<div class="myspace">
 			<h1>This Is Aadhi</h1>
-			<img src="aadi.png">
+			<img src="aadi.jpg">
 			<h1>And This Is My Feed.</h1>
+			<p class="tag">Because a blog is too mainstream.</p>
+			<button onclick="login()" class="login-button">Login</button>
 		</div>
-		<div class="feed">
-			<div class="dialog">
-				<p class="text">Finally submitted the form. Feeling great! Oh wait! I gotta go to school mate! I haven't slept and so I will be late! Oh this is great! ((Sarcasm))</p>
-				<p class="time">15-11-2016 00:04</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Since the IMAD Console isn't up yet, I think I host both my apps through github pages and will leave this page in /feed. So that will be links I will be giving in the form.</p>
-				<p class="time">14-11-2016 23:50</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Forgot about preparing my resume. ((FacePalm))</p>
-				<p class="time">14-11-2016 23:15</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Trying to decide on which companies should I apply for internship. Not optimistic that I will get the internship but if I do I want it to be in a good company.</p>
-				<p class="time">14-11-2016 22:42</p>
-			</div>
-			<div class="dialog">
-				<p class="text">And I should probably not forget that November 19 is Men's day.</p>
-				<p class="time">14-11-2016 22:00</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Forgot that today is Children's day. Silly Pappans!</p>
-				<p class="time">14-11-2016 22:00</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Having a hard time filling up the form due to when I should apply for internship. I have my studies to worry about. Hmm, what to do ... what to do...</p>
-				<p class="time">14-11-2016 22:00</p>
-			</div>
-			<div class="dialog">
-				<p class="text">This is a unnecessarily large post just to check how well the dialog boxes scale with large text. Running against time here. Trying to type what all comes to my mind and what comes to my mind is the fact that nothing comes to my mind and typing that nothing comes to my mind. Sorry to waste your time.</p>
-				<p class="time">14-11-2016 21:25</p>
-			</div>
-			<div class="dialog">
-				<p class="text">AngHa! Progress! Finall fixed the bar to the left. Pheww! That was exhausting!</p>
-				<p class="time">14-11-2016 21:01</p>
-			</div>
-			<div class="dialog">
-				<p class="text">I don't what is wrong with this code. Tried all the 18 tricks yet this is not cooperating</p>
-				<p class="time">14-11-2016 20:30</p>
-			</div>
-			<div class="dialog">
-				<p class="text">Trying to work on responsiveness of the feed and main site. Not going well.</p>
-				<p class="time">14-11-2016 20:11</p>
-			</div>
-			<div class="dialog">
-				<p class="text">This is my first test post! Happy that this is working.</p>
-				<p class="time">14-11-2016 19:28</p>
-			</div>
+		<section id="feed">
+			<span class="loading">Fetching feeds from outer space...</span>
+		</section>
+        <script id="feeds-template" type="text/x-handlebars-template">
+           {{#each feeds}}
+			<div class="dialog" data-id="{{id}}">
+				<p class="text">{{text}}</p>
+				<p class="footer">
+					<a class="like" href="javascript:like();">Like - </a>
+					<span class="like-count">{{len likes}}</span>
+                    .
+					<span class="comment">Comment - </span>
+					<span class="comment-count">0</span>
 
-		</div>
-	</div>
+					<span class="time">{{timestamp}}</span>					
+				</p>
+			</div>
+			<div class="reply-box">
+				<input type="text" class="reply-textbox" name="reply-box">
+			</div>
+			<div class="comments-container">
+				<ul class="comments">
+					<li class="comment"></li>
+				</ul>
+			</div>
+           {{/each}}
+        </script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
