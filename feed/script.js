@@ -12,6 +12,8 @@ var preObject = document.getElementById('feed');
 var feedObject = firebase.database().ref().child('feeds');
 var user;
 
+var collapse = true;
+
 feedObject.on('value', function (snap) {
  	render(snap.val());
 	console.log(snap.val());
@@ -23,6 +25,11 @@ function render(data) {
 
 	var rendered = template({feeds:data.reverse()});
 	$("#feed").html(rendered);
+
+	if (collapse) {
+		$(".comments-container").hide();
+		collapse = false;
+	}
 }
 
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -47,9 +54,22 @@ function login() {
 	  // ...
 	});	
 }
-function like() {
+function getDate() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
 
-	// body...
+	var h = today.getHours();
+    var m = today.getMinutes();
+
+	var yyyy = today.getFullYear();
+	if(dd<10){
+	    dd='0'+dd
+	} 
+	if(mm<10){
+	    mm='0'+mm
+	} 
+	return dd+"-"+mm+"-"+yyyy+" "+h+":"+m;
 }
 
 $(document).on("click", ".like", function() {
@@ -64,7 +84,38 @@ $(document).on("click", ".like", function() {
 	feedObject.child(id).child("likes").set(like);
 });
 
+$(document).on("click", ".comment", function() {
+	if (user) {
+		$(this).closest(".dialog").next().find('.reply-box').show();
+	}
+	$(this).closest(".dialog").next().slideToggle();
+	// console.log(id);
+	// var like = {};
+	// like[user.uid] = true;
+	// feedObject.child(id).child("likes").set(like);
+});
+
+$(document).on("click", ".add-comment", function() {
+	var text = $(this).prev().val();
+	var id = $(this).closest(".comments-container").prev().data('id');
+	console.log(id);
+	if (!user) {
+		alert("Log in to like and comment");
+		return;
+	}
+	var comment = {
+		name: user.displayName,
+		uid: user.uid,
+		text: text,
+		timestamp: getDate()
+	};
+	console.log(comment);
+	// comment[user.uid] = true;
+	feedObject.child(id).child("comments").push(comment);
+});
+
 Handlebars.registerHelper("len", function(json) { 
 	if (json) return Object.keys(json).length;
 	return 0;
 });
+

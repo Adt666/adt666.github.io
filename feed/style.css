@@ -61,9 +61,6 @@ img {
 .tag {
 	margin: 0px;
 }
-.reply-textbox {
-	width: 90%;
-}
 .loading {
 	display: block;
 	text-align: center;
@@ -84,4 +81,41 @@ img {
 .footer a {
 	text-decoration: none;
 	color: white;
+}
+.reply-box {
+	width: 95%;
+	min-height: 60px;
+	margin: 0 auto;
+}
+.hide {
+	display: none;
+}
+.reply-textbox {
+	width: 100%;
+	display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-height:30px;
+}
+.add-comment {
+	float: right;
+    margin-top: 10px;
+}
+.comments {
+	list-style-type: none;
+}
+.comment-dialog {
+	padding: 10px;
+	background-color: #dfe5e9;
+	border-radius: 4px;
+}
+li .name {
+	font-size: .9em;
+}
+li .text {
+	font-size: 1em;
+}
+li .time {
+	font-size: .9em;
 }

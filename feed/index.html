@@ -26,17 +26,26 @@
 					<span class="like-count">{{len likes}}</span>
                     .
 					<span class="comment">Comment - </span>
-					<span class="comment-count">0</span>
+					<span class="comment-count">{{len comments}}</span>
 
 					<span class="time">{{timestamp}}</span>					
 				</p>
 			</div>
-			<div class="reply-box">
-				<input type="text" class="reply-textbox" name="reply-box">
-			</div>
 			<div class="comments-container">
+				<div class="reply-box">
+					<input type="textarea" class="reply-textbox" name="reply-box">
+					<button class="add-comment">Add Comment</button>
+				</div>
 				<ul class="comments">
-					<li class="comment"></li>
+				    {{#each comments}}
+					<li class="comment-dialog">
+						<span class="name">{{name}}</span>
+						<span class="text">{{text}}</span>
+						<p class="footer">
+							<span class="time">{{timestamp}}</span>
+						</p>	
+					</li>
+					{{/each}}
 				</ul>
 			</div>
            {{/each}}
