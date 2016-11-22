@@ -34,10 +34,20 @@ function render(data) {
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
+firebase.auth().onAuthStateChanged(function(loggedInUser) {
+  if (loggedInUser) {
+    user = loggedInUser;
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
+
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-	  $('.login-button').text(user.displayName);
-	  $('.logout-button').show();
+		$('.login-button').text(user.displayName);
+		$('.logout-button').show();
   } else {
     // No user is signed in.
   }
@@ -68,8 +78,8 @@ function login() {
 
 function logout() {
 	firebase.auth().signOut().then(function() {
-	  $('.login-button').text("Login");
-	  $('.logout-button').slideToggle();
+		$('.login-button').text("Login");
+		$('.logout-button').slideToggle();
 	}, function(error) {
 	  // An error happened.
 	});
