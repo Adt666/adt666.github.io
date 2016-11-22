@@ -29,7 +29,7 @@ body {
 	min-height: 8vh;
 	width: 90%;
 	border-radius: 8px;
-	margin: 20px 10px;
+	margin: 20px auto;
 	padding: 5px 20px;
 	color: white;
 }
@@ -70,11 +70,12 @@ img {
 .login-button {
 	position: fixed;
     top: 0px;
-    right: 30px;
-    border: 0;
-    color: #ffffff;
-    font-size: 14px;
-    background: #2c3e50;
+    right: 0px;
+    min-height:30px; 
+    background-color: #fff;
+	border-radius: 4px;
+	border-style: solid;
+	border-color: #27ae60;
     padding: 6px 15px 6px 15px;
     text-decoration: none;
 }
@@ -82,11 +83,11 @@ img {
 	position: fixed;
 	display: block;
     top: 30px;
-    right: 30px;
-    border: 0;
-    color: #ffffff;
-    font-size: 14px;
-    background: #2c3e50;
+    right: 0px;
+    background-color: #fff;
+	border-radius: 4px;
+	border-style: solid;
+	border-color: #27ae60;
     padding: 6px 15px 6px 15px;
     text-decoration: none;
 }
@@ -95,8 +96,7 @@ img {
 	color: white;
 }
 .reply-box {
-	width: 95%;
-	min-height: 60px;
+	min-height: 80px;
 	margin: 20px auto;
 }
 .hide {
@@ -110,6 +110,7 @@ img {
     box-sizing: border-box;
     min-height:30px;
     padding: 10px;
+    font-size: .9em;
 }
 .add-comment {
 	float: right;
@@ -120,9 +121,15 @@ img {
 	border-style: solid;
 	border-color: #27ae60;
 	font-family: "Dosis";
+	font-size: .9em;
 }
 .comments {
 	list-style-type: none;
+	padding-left: 0
+}
+.comments-container {
+	width: 95%;
+	margin: 0 auto;
 }
 .comment-dialog {
 	padding: 10px;

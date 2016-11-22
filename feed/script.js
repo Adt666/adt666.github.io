@@ -7,7 +7,7 @@ var config = {
   messagingSenderId: "429855910954"
 };
 firebase.initializeApp(config);
-console.log('hello');
+// console.log('hello');
 var preObject = document.getElementById('feed');
 var feedObject = firebase.database().ref().child('feeds');
 var user;
@@ -16,7 +16,7 @@ var collapse = true;
 
 feedObject.on('value', function (snap) {
  	render(snap.val());
-	console.log(snap.val());
+	// console.log(snap.val());
 });
 
 function render(data) {
@@ -50,7 +50,7 @@ function login() {
 	  // The signed-in user info.
 	  user = result.user;
 	  // ...
-	  console.log(user);
+	  // console.log(user);
 
 	  $('.login-button').text(user.displayName);
 	  $('.logout-button').slideToggle();
@@ -95,7 +95,7 @@ function getDate() {
 
 $(document).on("click", ".like", function() {
 	var id = $(this).closest(".dialog").data('id');
-	console.log(id);
+	// console.log(id);
 	if (!user) {
 		alert("A wise man one said, Log in you should, like you can.");
 		return;
@@ -110,7 +110,7 @@ $(document).on("click", ".comment", function() {
 		$(this).closest(".dialog").next().find('.reply-box').show();
 	}
 	$(this).closest(".dialog").next().slideToggle();
-	// console.log(id);
+	console.log(id);
 	// var like = {};
 	// like[user.uid] = true;
 	// feedObject.child(id).child("likes").set(like);
@@ -119,7 +119,7 @@ $(document).on("click", ".comment", function() {
 $(document).on("click", ".add-comment", function() {
 	var text = $(this).prev().val();
 	var id = $(this).closest(".comments-container").prev().data('id');
-	console.log(id);
+	// console.log(id);
 	if (!user) {
 		alert("You shall not Comment. Unless you are logged in of course.");
 		return;
@@ -130,7 +130,7 @@ $(document).on("click", ".add-comment", function() {
 		text: text,
 		timestamp: getDate()
 	};
-	console.log(comment);
+	// console.log(comment);
 	// comment[user.uid] = true;
 	feedObject.child(id).child("comments").push(comment);
 });
