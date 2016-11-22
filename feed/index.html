@@ -35,10 +35,6 @@
 				</p>
 			</div>
 			<div class="comments-container">
-				<div class="reply-box">
-					<input type="textarea" class="reply-textbox" name="reply-box">
-					<button class="add-comment">Add Comment</button>
-				</div>
 				<ul class="comments">
 				    {{#each comments}}
 					<li class="comment-dialog">
@@ -50,6 +46,10 @@
 					</li>
 					{{/each}}
 				</ul>
+				<div class="reply-box">
+					<input type="textarea" class="reply-textbox" name="reply-box">
+					<button class="add-comment">Add Comment</button>
+				</div>
 			</div>
            {{/each}}
         </script>

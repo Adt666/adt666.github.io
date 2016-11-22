@@ -97,7 +97,7 @@ $(document).on("click", ".like", function() {
 	var id = $(this).closest(".dialog").data('id');
 	console.log(id);
 	if (!user) {
-		alert("Log in to like and comment");
+		alert("A wise man one said, Log in you should, like you can.");
 		return;
 	}
 	var like = {};
@@ -121,7 +121,7 @@ $(document).on("click", ".add-comment", function() {
 	var id = $(this).closest(".comments-container").prev().data('id');
 	console.log(id);
 	if (!user) {
-		alert("Log in to like and comment");
+		alert("You shall not Comment. Unless you are logged in of course.");
 		return;
 	}
 	var comment = {

@@ -97,7 +97,7 @@ img {
 .reply-box {
 	width: 95%;
 	min-height: 60px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 .hide {
 	display: none;
@@ -109,6 +109,7 @@ img {
     border-radius: 4px;
     box-sizing: border-box;
     min-height:30px;
+    padding: 10px;
 }
 .add-comment {
 	float: right;
