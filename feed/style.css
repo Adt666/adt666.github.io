@@ -78,6 +78,18 @@ img {
     padding: 6px 15px 6px 15px;
     text-decoration: none;
 }
+.logout-button {
+	position: fixed;
+	display: block;
+    top: 30px;
+    right: 30px;
+    border: 0;
+    color: #ffffff;
+    font-size: 14px;
+    background: #2c3e50;
+    padding: 6px 15px 6px 15px;
+    text-decoration: none;
+}
 .footer a {
 	text-decoration: none;
 	color: white;

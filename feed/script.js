@@ -33,6 +33,16 @@ function render(data) {
 }
 
 var provider = new firebase.auth.GoogleAuthProvider();
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+	  $('.login-button').text(user.displayName);
+	  $('.logout-button').show();
+  } else {
+    // No user is signed in.
+  }
+});
+
 function login() {
 	firebase.auth().signInWithPopup(provider).then(function(result) {
 	  // This gives you a Google Access Token. You can use it to access the Google API.
@@ -43,6 +53,7 @@ function login() {
 	  console.log(user);
 
 	  $('.login-button').text(user.displayName);
+	  $('.logout-button').slideToggle();
 	}).catch(function(error) {
 	  // Handle Errors here.
 	  var errorCode = error.code;
@@ -54,6 +65,16 @@ function login() {
 	  // ...
 	});	
 }
+
+function logout() {
+	firebase.auth().signOut().then(function() {
+	  $('.login-button').text("Login");
+	  $('.logout-button').slideToggle();
+	}, function(error) {
+	  // An error happened.
+	});
+}
+
 function getDate() {
 	var today = new Date();
 	var dd = today.getDate();
