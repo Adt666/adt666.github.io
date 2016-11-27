@@ -12,8 +12,6 @@ var preObject = document.getElementById('feed');
 var feedObject = firebase.database().ref().child('feeds');
 var user;
 
-var collapse = true;
-
 feedObject.on('value', function (snap) {
  	render(snap.val());
 	// console.log(snap.val());
@@ -25,11 +23,6 @@ function render(data) {
 
 	var rendered = template({feeds:data.reverse()});
 	$("#feed").html(rendered);
-
-	if (collapse) {
-		$(".comments-container").hide();
-		collapse = false;
-	}
 }
 
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -80,6 +73,7 @@ function logout() {
 	firebase.auth().signOut().then(function() {
 		$('.login-button').text("Login");
 		$('.logout-button').slideToggle();
+		user = undefined;
 	}, function(error) {
 	  // An error happened.
 	});
@@ -120,7 +114,7 @@ $(document).on("click", ".comment", function() {
 		$(this).closest(".dialog").next().find('.reply-box').show();
 	}
 	$(this).closest(".dialog").next().slideToggle();
-	console.log(id);
+	// console.log(id);
 	// var like = {};
 	// like[user.uid] = true;
 	// feedObject.child(id).child("likes").set(like);

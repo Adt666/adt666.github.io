@@ -13,8 +13,8 @@
 			<h1>And This Is My Feed.</h1>
 			<p class="tag">Because a blog is too mainstream.</p>
 			<div>
-				<button onclick="login()" class="login-button">Login</button>
-				<button onclick="logout()" class="logout-button hide">Logout</button>
+				<button onclick="login()" class="button login-button">Login</button>
+				<button onclick="logout()" class="button logout-button hide">Logout</button>
 			</div>
 		</div>
 		<section id="feed">
@@ -25,16 +25,16 @@
 			<div class="dialog" data-id="{{id}}">
 				<p class="text">{{text}}</p>
 				<p class="footer">
-					<a class="like">Like - </a>
+					<a class="like" href="javascript:;">Like - </a>
 					<span class="like-count">{{len likes}}</span>
                     .
-					<span class="comment">Comment - </span>
+					<a class="comment" href="javascript:;">Comment - </a>
 					<span class="comment-count">{{len comments}}</span>
 
 					<span class="time">{{timestamp}}</span>					
 				</p>
 			</div>
-			<div class="comments-container">
+			<div class="comments-container hide">
 				<ul class="comments">
 				    {{#each comments}}
 					<li class="comment-dialog">
@@ -48,7 +48,7 @@
 				</ul>
 				<div class="reply-box">
 					<input type="textarea" class="reply-textbox" name="reply-box">
-					<button class="add-comment">Add Comment</button>
+					<button class="button add-comment">Add Comment</button>
 				</div>
 			</div>
            {{/each}}
