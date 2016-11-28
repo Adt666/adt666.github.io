@@ -11,6 +11,9 @@ body {
 	background-attachment: fixed; 
 	font-family: "Dosis";
 }
+input {
+	font-family: "Dosis";
+}
 #feed {
 	margin: 0 auto;
 	height: 100vh;
@@ -129,6 +132,7 @@ img {
 	background-color: rgba(223, 229, 233, 0.8);
 	border-radius: 4px;
 	min-height: 40px;
+	margin-top: 10px;
 }
 li .name {
 	color:#2980b9;

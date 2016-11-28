@@ -23,6 +23,12 @@ function render(data) {
 
 	var rendered = template({feeds:data.reverse()});
 	$("#feed").html(rendered);
+
+	var expanded = localStorage.getItem('expanded');
+
+	if(expanded) {
+		$('[data-id="' + expanded +'"]').next().show();
+	}
 }
 
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -109,15 +115,19 @@ $(document).on("click", ".like", function() {
 	feedObject.child(id).child("likes").set(like);
 });
 
-$(document).on("click", ".comment", function() {
-	if (user) {
-		$(this).closest(".dialog").next().find('.reply-box').show();
-	}
-	$(this).closest(".dialog").next().slideToggle();
-	// console.log(id);
-	// var like = {};
-	// like[user.uid] = true;
-	// feedObject.child(id).child("likes").set(like);
+$(document).on("click", ".comment:not(.expanded)", function() {
+	$(this).addClass("expanded");
+	$('.comments-container').slideUp();
+	$(this).closest(".dialog").next().slideDown();
+
+	var id = $(this).closest(".dialog").data('id');
+	localStorage.setItem("expanded", id);
+});
+
+$(document).on("click", ".comment.expanded", function() {
+	$(this).closest(".dialog").next().slideUp();
+	$(this).removeClass("expanded");
+	localStorage.removeItem("expanded");
 });
 
 $(document).on("click", ".add-comment", function() {
