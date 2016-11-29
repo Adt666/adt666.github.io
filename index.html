@@ -2,70 +2,93 @@
 <html>
     <head>
         <title>Aadithye Nandakumar | IMAD</title>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.css" />
         <link href="style.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Rajdhani" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Dosis" rel="stylesheet">
     </head>
     <body>
-    <div>
-        <div class="intro slide">
-            <div class="content">
-                <img src="aadi.png">
-                <div class="title">
-                    <h1>AADITHYE NANDAKUMAR</h1>
+        <div id="fullpage">
+            <div class="section bio" data-anchor="firstPage">
+                <img src="aadi.jpg" class="skill-img">
+                <div class="heading-container">
+                    <h1 class="heading">AADITHYE</h1>     
+                    <h1 class="heading">NANDAKUMAR</h1>     
                 </div>
-                <div class="text">
-                    <a href="https://adt666.github.io/feed">If you want to go to my feed click me.</a>
-                </div>
-            </div>
-        </div>
-        <div class="prog slide">
-            <div class="content">
-                <img src="prog.png">
-                <div class="title">
-                    <h1>PROGRAMMING</h1>
-                </div>
-                <div class="text">
-                    <p>if  (me.eye.see == code) {<br>
-                     me.feel.happy();<br>
-                     }</p>
+                <div class="links">
+                    <button><a href="#secondPage">The Feed</a></button>
+                    <button><a href="#thirdPage">My Skills</a></button>
+                    <button><a href="#fourthPage">My Social</a></button>
                 </div>
             </div>
-        </div>
-        <div class="model slide">
-            <div class="content">
-                <img src="model.png">
-                <div class="title">
-                    <h1>3D MODELLING</h1>
-                </div>
-                <div class="text">
-                    <p>I'd rather look at a mug I made in Blender rather than a real one.</p>
-                </div>
+            <div class="section feed" data-anchor="secondPage">
+            <div class="feeda">
+                <h1 class="heading"><a href="/feed" class="heading">THE FEED</a></h1>
             </div>
-        </div>
-        <div class="present slide">
-            <div class="content">
-                <img src="present.png">
-                <div class="title">
-                    <h1>PRESENTATION</h1>
-                </div>
-                <div class="text">
-                    <p>You might say "Boring!". But someones gotta do it.</p>
-                </div>
-            </div>
-        </div>
-        <div class="game slide">
-            <div class="content">
-                <img src="game.png">
-                <div class="title">
-                    <h1>GAMING</h1>
-                </div>
-                <div class="text">
-                    <p>Whether it you have to drift through spa or punch blocks, I love it.</p>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" src="main.js"></script>
+                <div class="dialog-container">
+                    <div class="dialog hide" data-id="1">
+                        <p class="text">Who wants a blog when you can have a feed that updates live. Because reloading is so old fashioned.</p>
+                        <p class="footer">
+                        <a class="like" href="javascript:;">Like - </a>
+                        <span class="like-count">1</span>
+                        .
+                        <a class="comment" href="javascript:;">Comment - </a>
+                        <span class="comment-count">1</span>
 
+                        <span class="time">27-11-2016 15:30</span>                  
+                        </p>
+                    </div>
+                    <div class="dialog hide" data-id="2">
+                        <p class="text">And did I mention, It does that across multiple devices.<a href="/feed" class="link"> Click here to view now.</a></p>
+                        <p class="footer">
+                        <a class="like" href="javascript:;">Like - </a>
+                        <span class="like-count">1</span>
+                        .
+                        <a class="comment" href="javascript:;">Comment - </a>
+                        <span class="comment-count">1</span>
+
+                        <span class="time">27-11-2016 15:30</span>                  
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section skill" data-anchor="thirdPage">
+                <div class="slide prog">
+                    <img src="prog.png" class="skill-img" >
+                    <div class="heading-container">
+                    <h1 class="heading">PROGRAMMMER</h1>     
+                    <h1 class="heading">BY DAY</h1>     
+                </div>
+                </div>
+                <div class="slide graphic">
+                    <img src="model.png" class="skill-img">
+                    <div class="heading-container">
+                    <h1 class="heading">GRAPHIC DESIGNER</h1>     
+                    <h1 class="heading">BY NIGHT</h1>     
+                </div>
+                </div>
+                <div class="slide gamer">
+                    <img src="game.png" class="skill-img">
+                    <div class="heading-container">
+                    <h1 class="heading">GAMER</h1>     
+                    <h1 class="heading">WHENEVER IN BETWEEN</h1>     
+                </div>
+                </div>
+
+            </div>
+            <div class="section social" data-anchor="fourthPage">
+                <h1>ME IN THE CLOUD</h1>
+                <div class="social-links">
+                    <img src="github.svg" class="social-image">
+                    <img src="facebook.svg" class="social-image">
+                    <img src="twitter.svg" class="social-image">
+                    <img src="youtube.svg" class="social-image">
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
