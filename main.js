@@ -29,3 +29,15 @@ function getDate() {
 	} 
 	return dd+"-"+mm+"-"+yyyy+" "+h+":"+m;
 }
+$(".git").click(function(){
+	window.location.href = "http://www.github.com/adt666";
+});
+$(".you").click(function(){
+	window.location.href = "https://www.youtube.com/channel/UCJApbKmVPuV71DL7zfKdoZw";
+});
+$(".face").click(function(){
+	window.location.href = "https://www.facebook.com/aadithye";
+});
+$(".twit").click(function(){
+	window.location.href = "https://twitter.com/aadithye";
+});
